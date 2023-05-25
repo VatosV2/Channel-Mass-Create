@@ -26,7 +26,7 @@ class Log:
     def invalid(msg):
         print(f'{Style.BRIGHT}[{Fore.LIGHTMAGENTA_EX} INVALID {Fore.RESET}]: {msg}')
 
-async def create_channel(guild_id, bot_token):
+async def create_channel(guild_id, bot_token, name):
     global Channel_created
 
     headers = {
@@ -34,7 +34,7 @@ async def create_channel(guild_id, bot_token):
         'Content-Type': 'application/json'
     }
     payload = {
-        'name': 'NIGSUS',
+        'name': name,
         'guild_id': guild_id
     }
 
@@ -51,10 +51,11 @@ async def main():
     Log.console("Youre Rate-Limit can be fucked if you use it to often.")
     bot_token = input(lc + " Input Bot Token: ")
     guild_id = input(lc + " Input Guild/Server id: ")
+    name = input(lc+ "Enter channel name: ")
 
     tasks = []
     for _ in range(500):
-        tasks.append(create_channel(guild_id, bot_token))
+        tasks.append(create_channel(guild_id, bot_token, name))
 
     try:
         await asyncio.gather(*tasks)
