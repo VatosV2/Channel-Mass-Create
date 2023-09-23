@@ -1,6 +1,8 @@
 import asyncio
 import aiohttp
 import requests                                                                                                                                                                                                                                                                                                                     
+from colorama import Style, Fore
+import os
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
